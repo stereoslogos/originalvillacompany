@@ -12,6 +12,11 @@ body {
     font-family: 'Sora', sans-serif;
 }
 
+p span {
+    color: yellow;
+    font-weight: bold;
+}
+
 .contenedor {
     width: 90%;
     max-width: 900px;
