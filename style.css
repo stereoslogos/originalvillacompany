@@ -357,7 +357,7 @@ h3{
         margin-bottom: 30px;
     }
     .add-img{
-        width: 80%;
+        width: 150%;
         height: 80%;
     }
     .img-gallery{
@@ -366,10 +366,22 @@ h3{
     }
     .socialmedia{
         margin: 40px 20px 0 0;
-        width: 100%;
-        height: 80%;
+        width: 180px;
+        height: 50px;
         justify-content: center;
     }
+
+    .socialmediaicon {
+        width:60px;
+        height:60px;
+        border: none;
+    }
+
+    .socialmediaicon:hover {
+        background: none;
+        color: var(--purp);
+    }
+
     .socialmedia i{
         margin-left: 0;
     }
