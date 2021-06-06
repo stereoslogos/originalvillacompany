@@ -23,3 +23,15 @@ const showImg = (image)=>{
     imagesLight.classList.toggle('showImage')
     down1.style.opacity = '0'
 }
+
+const svg = document.getElementById('triangles');
+                //function
+                svg.onclick = (e) => {
+                    const colors = ['red','cyan','chartreuse','tomato','fuchsia','darkviolet']
+                    //functions to randomly select colors from array
+                    const rando = () => colors [Math.floor(Math.random() * colors.length)];
+                    document.documentElement.style.cssText = `
+                    --dark-color: ${rando()};
+                    --light-color: ${rando()};
+                    `
+                }

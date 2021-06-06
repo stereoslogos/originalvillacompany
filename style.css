@@ -5,20 +5,70 @@
 }
 
 :root{
+    --background:#212121;
+    --yellow1: #ffff3f;
+    --yellow2: #ffe735;
+    --white: #fcfcfc;
+    --purp: #3e1ed4;
+    --neutral: #656565;
+    font-family: 'Sora', sans-serif;
+    font-size: 62.5%;
     scroll-behavior: smooth;
+
+    --dark-color: #000000;
+--light-color: #fbff00;
 }
 
+
+
+
+svg{
+    width: 10%;
+cursor: pointer;
+float: left;
+}
+
+#dark{
+fill: var(--dark-color);
+}
+
+#light{
+fill: var(--light-color);
+}
+
+#dark1, #light1, #dark2{
+transition: all 1s ease;
+}
+
+#dark2{
+transform: translateX(-100%);
+}
+
+svg:hover #light1{
+transform: translateX(20%);
+}
+
+svg:hover #dark1{
+transform: translateX(40%);
+opacity: 0;
+}
+
+svg:hover #dark2{
+transform: translateX(0%);
+}
+
+
 body {
-    font-family: 'Sora', sans-serif;
+    background-color: var(--background);
 }
 
 p span {
-    color: yellow;
+    color: var(--purp);
     font-weight: bold;
 }
 
 .contenedor {
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     overflow: hidden;
     margin: auto;
@@ -27,9 +77,8 @@ p span {
 
 header {
     height: 100vh;
-    background-image: linear-gradient(to top, rgba(202, 62, 245, 0.6) 0%, rgba(249, 245, 134, 0.8) 100%), url(./header.jpg);
+    background-image: linear-gradient(to top, rgb(33, 33, 33), rgba(255, 255, 255, 0.26)), url(./barras.png);
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
@@ -42,7 +91,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #fff;
+    color: var(--white);
 }
 
 .open {
@@ -59,7 +108,7 @@ header {
     right: 0;
     width: 10vw;
     height: 100%;
-    background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     font-weight: bold;
@@ -68,6 +117,7 @@ header {
     transition: transform.3s ease-in-out;
     transform: translate(110%);
     cursor: pointer;
+    font-size: 1.5em;
 }
 
 .spread{
@@ -75,12 +125,16 @@ header {
 }
 
 .menu-nav a{
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
 }
 
+.menu-nav a:hover{
+    color: var(--yellow1);
+}
+
 .title{
-    font-size: 60px;
+    font-size: 3em;
     margin-bottom: 15px;
 }
 
@@ -89,13 +143,10 @@ header {
     font-size: 25px;
 }
 
-
-
-
 .sub {
     text-align: center;
     font-weight: 300;
-    color: #71ff4e;
+    color: var(--yellow1);
     font-weight: bold;
     margin-bottom: 40px;
     font-size: 40px;
@@ -122,24 +173,18 @@ header {
 
 .n-service{
     margin-bottom: 7px;
-    color: #71ff4e;
-}
-
-.number {
-    display: inline-block;
-    background-image: linear-gradient(to right, #ffbb00 0%, #71ff4e 100%);
-    width: 30px;
-    height: 30px;
-    color: #fff;
-    text-align: center;
-    border-radius: 50%;
-    font-weight: 700;
-    line-height: 30px;
-    margin-right: 5px;
+    color: var(--yellow2);
 }
 
 .gallery {
-    background: #f2f2f2;
+    background: var(--neutral);
+}
+
+p{
+    color: var(--white);
+    font-size: 2em;
+    justify-content: space-evenly;
+    
 }
 
 .contenedor-gallery{
@@ -160,6 +205,7 @@ figure{
 .img-gallery {
     object-fit: cover;
     width: 30%;
+    height: 30%;
     display: block;
     margin-bottom: 15px;
     cursor: pointer;
@@ -169,7 +215,8 @@ figure{
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
             
-    box-shadow: 0 0 16px greenyellow;
+    box-shadow: 0 0 16px var(--purp);
+    transition: transform .2s ease-in-out;
   }
 
 
@@ -205,46 +252,25 @@ figure{
 
 .close {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 30px;
+    right: 30px;
     width: 40px;
     cursor: pointer;
 }
 
-
-
-
-.acerca {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 .cont-acerca {
-    width: 20%;
+    width: 49%;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.cont-acerca img{
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-}
-
-.n-acerca {
     display: inline-block;
-    margin-top: 20px;
-    width: 100%;
-    font-weight: 700;
 }
 
 footer{
-    background: yellow;
     padding-bottom: 0.1px;
 }
 
+h2{
+    color: var(--yellow1);
+}
 .footer-content{
     display:flex;
     justify-content: space-between;
@@ -259,7 +285,7 @@ footer{
 }
 
 .brand {
-    font-size: 40px;
+    font-size: 4em;
 }
 
 .socialmedia{
@@ -273,15 +299,15 @@ footer{
     margin-left: 20px;
     width:60px;
     height:60px;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     border-radius:50%;
     text-align: center;
-    color: #fff;
+    color: var(--white);
 }
 
 .socialmediaicon:hover {
-    background: #fff;
-    color: yellow;
+    background: var(--white);
+    color: var(--purp);
 }
 
 .socialmediaicon i{
@@ -294,8 +320,23 @@ footer{
     max-width: 1200px;
     margin: 0 auto;
     height: 2px;
-    background: #fff;
+    background: var(--white);
     margin-bottom: 60px;
+}
+
+a{
+    color:var(--white);
+    text-decoration: none;
+    
+}
+
+footer a{
+    font-size: .5em;
+}
+
+h3{
+    font-size: 1.8em;
+    color: var(--yellow2);
 }
 
 @media screen and (max-width:800px){
@@ -317,13 +358,16 @@ footer{
     }
     .add-img{
         width: 80%;
+        height: 80%;
     }
     .img-gallery{
         width: 45%;
+        height: 45%;
     }
     .socialmedia{
-        margin-top: 40px;
-        width: 80%;
+        margin: 40px 20px 0 0;
+        width: 100%;
+        height: 80%;
         justify-content: center;
     }
     .socialmedia i{
@@ -331,5 +375,10 @@ footer{
     }
     .footer-content{
         justify-content:center;
+    }
+
+    footer p{
+        text-align: center;
+        
     }
 }
